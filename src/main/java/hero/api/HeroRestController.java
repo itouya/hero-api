@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("api/hero")
 public class HeroRestController {
 	@Autowired
 	HeroService service;
 	
-	@CrossOrigin("http://localhost:8080")
 	@RequestMapping(method=RequestMethod.GET)
 	public List<Hero> getHeroes() {
 		return service.findAll();
@@ -36,7 +36,7 @@ public class HeroRestController {
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="{id}")
-	public Hero putHero(@PathVariable Integer id, @RequestBody Hero hero) {
+	public Hero putHero(@PathVariable String id, @RequestBody Hero hero) {
 		hero.setId(id);
 		return service.update(hero);
 	}
