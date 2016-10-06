@@ -31,4 +31,8 @@ public class HeroService {
 	public void delete(Integer id) {
 		repository.delete(id);
 	}
+	
+	public List<Hero> search(String token) {
+		return repository.findByNameContainsOrderByIdAsc(token);
+	}
 }

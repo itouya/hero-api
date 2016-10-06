@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Hero {
 	@Id
 	@GeneratedValue
-	private String id;
+	private Integer id;
 	
 	@Column(nullable=false)
 	private String name;
