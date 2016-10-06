@@ -28,8 +28,8 @@ public class HeroRestController {
 	
 	// http://hero-server-host:8080/hero/api/query?name={token}
 	@RequestMapping(method=RequestMethod.GET, value="/query")
-	public List<Hero> searchHeroes(@RequestParam String token) {
-		return service.search(token);
+	public List<Hero> searchHeroes(@RequestParam String name) {
+		return service.search(name);
 	}
 	
 	// http://hero-server-host:8080/hero/api/{id}
