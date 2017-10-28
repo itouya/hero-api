@@ -22,4 +22,7 @@ public class Hero {
 	
 	@Column(nullable=false)
 	private String name;
+	
+	@Column(nullable=false)
+	private String account_image;
 }

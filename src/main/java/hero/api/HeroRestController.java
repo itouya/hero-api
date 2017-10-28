@@ -23,6 +23,7 @@ public class HeroRestController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public List<Hero> getHeroes() {
+		System.out.println("get heroes");
 		return (ArrayList<Hero>)service.findAll();
 	}
 	
